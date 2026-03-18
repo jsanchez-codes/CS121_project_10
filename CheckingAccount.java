@@ -62,7 +62,7 @@ public class CheckingAccount implements HasMenu, Serializable {
 	} // end getBalanceString
 	
 	public void setBalance(double balance){
-		rhis.balance = balance;
+		this.balance = balance;
 	} // end setBalance
 	
 	private double getDouble(){
@@ -85,7 +85,7 @@ public class CheckingAccount implements HasMenu, Serializable {
 	
 	public void makeDeposit(){
 		System.out.print("How much to deposit? ");
-		double desposit = this.getDouble();
+		double deposit = this.getDouble();
 		this.balance += deposit;
 		System.out.println("New Balance: " + this.getBalanceString());
 	} // end makeDeposit
@@ -93,7 +93,7 @@ public class CheckingAccount implements HasMenu, Serializable {
 	public void makeWithdrawal(){
 		System.out.print("How much to withdraw? ");
 		double withdrawal = this.getDouble();
-		if (withdraw > this.balance){
+		if (withdrawal > this.balance){
 			System.out.println("Insufficient funds");
 		} else {
 			this.balance -= withdrawal;
