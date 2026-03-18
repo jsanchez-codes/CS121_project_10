@@ -39,15 +39,67 @@ public class CheckingAccount implements HasMenu, Serializable {
 				keepGoing = false;
 			} else if (response.equals("1")){
 				System.out.println(" Checking Balance... ");
+				this.checkBalance();
 			} else if (response.equals("2")){
 				System.out.println(" Making a Deposit... ");
+				this.makeDeposit();
 			} else if (response.equals("3")){
 				System.out.println(" Making a Withdrawal... ");
+				this.makeWithdrawal();
 			} else {
 				System.out.println(" Please enter 0, 1, 2, or 3 ");
 			} // end if
 		} // end while
 	} // end start
+
+	public double getBalance(){
+		return this.balance;
+	} // end getBalance
+	
+	public String getBalanceString(){
+		String result = String.format("$%.02f", this.balance);
+		return result;
+	} // end getBalanceString
+	
+	public void setBalance(double balance){
+		rhis.balance = balance;
+	} // end setBalance
+	
+	private double getDouble(){
+		Scanner input = new Scanner(System.in);
+		String resultString = input.nextLine();
+		double result = 0d;
+		try {
+			result = Double.parseDouble(resultString);
+		} catch (Exception e){
+			System.out.println("Not a legal input. Changing to a 0");
+			result = 0d;
+		} // end try
+		return result;
+	} // end getDouble
+
+	public void checkBalance(){
+		System.out.print("Current Balance: ");
+		System.out.println(this.getBalanceString);
+	} // end checkBalance
+	
+	public void makeDeposit(){
+		System.out.print("How much to deposit? ");
+		double desposit = this.getDouble();
+		this.balance += this.deposit;
+		System.out.println("New Balance: " + this.getBalanceString());
+	} // end makeDeposit
+	
+	public void makeWithdrawal(){
+		System.out.print("How much to withdraw? ");
+		double withdrawal = this.getDouble();
+		if (withdraw > this.balance){
+			System.out.println("Insufficient funds");
+		} else {
+			this.balance -= this.withdrawal;
+		} // end if
+		System.out.println("New Balance: " + this.getBalanceString());
+	} // end makeWithdrawl
 	
 } // end class def
 
