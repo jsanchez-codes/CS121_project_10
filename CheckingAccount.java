@@ -80,13 +80,13 @@ public class CheckingAccount implements HasMenu, Serializable {
 
 	public void checkBalance(){
 		System.out.print("Current Balance: ");
-		System.out.println(this.getBalanceString);
+		System.out.println(this.getBalanceString());
 	} // end checkBalance
 	
 	public void makeDeposit(){
 		System.out.print("How much to deposit? ");
 		double desposit = this.getDouble();
-		this.balance += this.deposit;
+		this.balance += deposit;
 		System.out.println("New Balance: " + this.getBalanceString());
 	} // end makeDeposit
 	
@@ -96,7 +96,7 @@ public class CheckingAccount implements HasMenu, Serializable {
 		if (withdraw > this.balance){
 			System.out.println("Insufficient funds");
 		} else {
-			this.balance -= this.withdrawal;
+			this.balance -= withdrawal;
 		} // end if
 		System.out.println("New Balance: " + this.getBalanceString());
 	} // end makeWithdrawl
