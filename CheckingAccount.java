@@ -30,7 +30,7 @@ public class CheckingAccount implements HasMenu, Serializable {
 	} // end menu
 	
 	public void start(){
-		boolean keepGoing = false;
+		boolean keepGoing = true;
 		String response;
 		while(keepGoing){
 			response = menu();
