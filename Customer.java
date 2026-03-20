@@ -10,8 +10,7 @@ public class Customer extends User implements Serializable {
 	public static void main(String[] args){
 		Customer c = new Customer();
 		if (c.login()){
-			System.out.println("Login was successful");
-			//this.getReport();
+			c.start();
 		} // end if
 	} // end main
 	
@@ -33,12 +32,40 @@ public class Customer extends User implements Serializable {
 	} // end getReport
 	
 	public void start(){
-		// don't do anything yet
+		// main loop foir customer
+		boolean keepGoing = true;
+		String result;
+		while (keepGoing){
+			result = menu();
+			if (result.equals("0")){
+				keepGoing = false;
+			} else if (result.equals("1")){
+				System.out.println("Checking Account: ");
+				this.checking.start();
+			} else if (result.equals("2")){
+				System.out.println("Savings Account: ");
+			} else if (result.equals("3")){
+				System.out.println("Change PIN: ");
+			} else {
+				System.out.println("Enter 0, 1, 2, or 3" );
+			} // end if
+		} // end while
 	} // end start
 	
 	public String menu(){
-		// finish later
-		return " ";
+		Scanner input = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Customer Menu");
+		System.out.println();
+		System.out.println("0) Exit");
+		System.out.println("1) Manage Checking" );
+		System.out.println("2) Manage Savings" );
+		System.out.println("3) Change PIN" );
+		System.out.println();
+		System.out.println("Your action: (0-3) ");
+		String result = input.nextLine();
+
+		return result;
 	} // end menu
 
 } // end class def
