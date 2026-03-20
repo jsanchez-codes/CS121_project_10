@@ -46,8 +46,8 @@ public class Customer extends User implements Serializable {
 				System.out.println("Savings Account: ");
 				this.savings.start();
 			} else if (result.equals("3")){
-				System.out.println("Change PIN: ");
-				//this.PIN.start();
+				System.out.println("Change PIN ");
+				//changePIN();
 			} else {
 				System.out.println("Enter 0, 1, 2, or 3" );
 			} // end if
@@ -69,5 +69,18 @@ public class Customer extends User implements Serializable {
 
 		return result;
 	} // end menu
+	
+	/*
+	public void changePIN(){
+		Scanner input = new Scanner(System.in);
+		System.out.println();
+		System.outprintln("Old PIN: ");
+		Sytem.out.println("New PIN: ");
+		String PIN = input.nextLine();
+		System.out.println("New PIN has been set");
+		
+		return PIN;
+	} // end changePIN
+	*/
 
 } // end class def
