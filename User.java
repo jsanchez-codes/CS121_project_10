@@ -49,7 +49,7 @@ public abstract class User implements Serializable, HasMenu {
 			String pinIn = input.nextLine();
 
 			if (pinIn.equals(this.PIN)){
-				System.out.println("Login succesful");
+				System.out.println("Login successful");
 				result = true;
 			} else {
 				System.out.println("Incorrect PIN");
