@@ -44,6 +44,7 @@ public class Customer extends User implements Serializable {
 				this.checking.start();
 			} else if (result.equals("2")){
 				System.out.println("Savings Account: ");
+				this.savings.start();
 			} else if (result.equals("3")){
 				System.out.println("Change PIN: ");
 			} else {
@@ -62,7 +63,7 @@ public class Customer extends User implements Serializable {
 		System.out.println("2) Manage Savings" );
 		System.out.println("3) Change PIN" );
 		System.out.println();
-		System.out.print("Your action: (0-3) ");
+		System.out.print("Enter 0-3: ");
 		String result = input.nextLine();
 
 		return result;
