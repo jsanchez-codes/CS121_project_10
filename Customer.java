@@ -64,7 +64,7 @@ public class Customer extends User implements Serializable {
 		System.out.println("2) Manage Savings" );
 		System.out.println("3) Change PIN" );
 		System.out.println();
-		System.out.print("Enter 0-3: ");
+		System.out.print("Action (0-3): ");
 		String result = input.nextLine();
 
 		return result;
