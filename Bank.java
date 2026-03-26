@@ -11,6 +11,7 @@ public class Bank implements HasMenu {
 	} // end main
 	
 	public Bank(){
+		this.loadSampleCustomers();
 		this.start();
 	} // end constructor
 	
@@ -56,6 +57,7 @@ public class Bank implements HasMenu {
 				keepGoing = false;
 			} else if (response.equals("1")){
 				System.out.println("Full customer report");
+				this.reportAllCustomers();
 			} else if (response.equals("2")){
 				System.out.println("Add a user");
 			} else if (response.equals("3")){
@@ -64,7 +66,18 @@ public class Bank implements HasMenu {
 		} // end while
 
 	} // end startAdmin
+	
+	public void loadSampleCustomers(){
+		customers.add(new Customer("Alice", "1111"));
+		customers.add(new Customer("Bob", "2222"));
+		customers.add(new Customer("Cindy", "3333"));
+	} // end loadSampleCustomers
 
+	public void reportAllCustomers(){
+		for (Customer customer: customers){
+			System.out.println(customer.getReport());
+		} // end for
+	} // end reportAllCustomers
 } // end Bank
 
 class CustomerList extends ArrayList<Customer> {};
