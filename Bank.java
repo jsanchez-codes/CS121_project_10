@@ -68,6 +68,9 @@ public class Bank implements HasMenu {
 			} else if (response.equals("3")){
 				System.out.println("Apply interest to savings");
 				this.applyInterest();
+			} else if (response.equals("4")){
+				System.out.println("Delete user");
+				//this.deleteUser();
 			} // end if
 		} // end while
 
@@ -144,9 +147,11 @@ public class Bank implements HasMenu {
 		} catch (Exception e){
 			System.out.println(e.getMessage());
 		} // end try
-		
 	} // end loadCustomers
-
+	
+	
+	//public void deleteUser(){
+		//for (int i = 0; i < customers.size(); i++){
 } // end Bank
 
 class CustomerList extends ArrayList<Customer> {};
