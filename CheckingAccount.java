@@ -38,16 +38,16 @@ public class CheckingAccount implements HasMenu, Serializable {
 			if (response.equals("0")){
 				keepGoing = false;
 			} else if (response.equals("1")){
-				System.out.println(" Checking Balance... ");
+				System.out.println("Checking Balance...");
 				this.checkBalance();
 			} else if (response.equals("2")){
-				System.out.println(" Making a Deposit... ");
+				System.out.println("Making a Deposit...");
 				this.makeDeposit();
 			} else if (response.equals("3")){
-				System.out.println(" Making a Withdrawal... ");
+				System.out.println("Making a Withdrawal...");
 				this.makeWithdrawal();
 			} else {
-				System.out.println(" Please enter 0, 1, 2, or 3 ");
+				System.out.println("Please enter 0, 1, 2, or 3");
 			} // end if
 		} // end while
 	} // end start
