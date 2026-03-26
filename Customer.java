@@ -26,8 +26,8 @@ public class Customer extends User implements Serializable {
 	
 	public String getReport(){
 		String report = "User: " + this.getUserName();
-		report += " , Checking: " + this.checking.getBalanceString();
-		report += " , Savings: " + this.savings.getBalanceString();
+		report += ", Checking: " + this.checking.getBalanceString();
+		report += ", Savings: " + this.savings.getBalanceString();
 		return report;
 	} // end getReport
 	
