@@ -59,7 +59,8 @@ public class Bank implements HasMenu {
 				System.out.println("Full customer report");
 				this.reportAllCustomers();
 			} else if (response.equals("2")){
-				System.out.println("Add a user");
+				System.out.println("Add a customer");
+				this.addCustomer();
 			} else if (response.equals("3")){
 			System.out.println("Apply interest to savings");
 			} // end if
@@ -78,6 +79,16 @@ public class Bank implements HasMenu {
 			System.out.println(customer.getReport());
 		} // end for
 	} // end reportAllCustomers
+	
+	public void addCustomer(){
+		Scanner input = new Scanner(System.in);
+		System.out.print("User name: ");
+		String userName = input.nextLine();
+		System.out.print("PIN: ");
+		String PIN = input.nextLine();
+		customers.add(new Customer(userName, PIN));
+	} // end addUser
+	
 } // end Bank
 
 class CustomerList extends ArrayList<Customer> {};
