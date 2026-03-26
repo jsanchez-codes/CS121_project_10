@@ -129,7 +129,7 @@ public class Bank implements HasMenu {
 			obOut.close();
 			fo.close();
 		} catch (Exception e){
-			System.outprintln(e.getMessage());
+			System.out.println(e.getMessage());
 		} // end try
 
 	} // end saveCustomers
