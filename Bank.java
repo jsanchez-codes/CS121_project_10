@@ -43,6 +43,7 @@ public class Bank implements HasMenu {
 				} // end if
 			} else if (response.equals("2")){
 				System.out.println("Customer login");
+				this.loginAsCustomer();
 			} else {
 				System.out.println("Please enter 0, 1, or 2");
 			} // end if
@@ -95,6 +96,27 @@ public class Bank implements HasMenu {
 			customer.savings.calcInterest();
 		} // end for
 	} // end applyInterest
+	
+	public void loginAsCustomer(){
+		Scanner input = new Scanner(System.in);
+                System.out.print("User name: ");
+                String userNameIn = input.nextLine();
+                System.out.print("PIN: ");
+                String PINin = input.nextLine();
+
+		Customer currentCustomer = null;
+		for (Customer customer: customers){
+			if (customer.login(userNameIn, PINin)){
+				currentCustomer = customer;
+			} // end if
+		} // end for
+
+		if (currentCustomer == null){
+			System.out.println("Customer not found");
+		} else {
+			currentCustomer.start();
+		} // end if
+	} // end loginAsCustomer
 	
 } // end Bank
 
