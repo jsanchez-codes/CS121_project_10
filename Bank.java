@@ -37,6 +37,9 @@ public class Bank implements HasMenu {
 				keepGoing = false;
 			} else if (response.equals("1")){
 				System.out.println("Admin login");
+				if (this.admin.login()){
+					startAdmin();
+				} // end if
 			} else if (response.equals("2")){
 				System.out.println("Customer login");
 			} else {
@@ -44,6 +47,23 @@ public class Bank implements HasMenu {
 			} // end if
 		} // end while
 	} // end start
+	
+	public void startAdmin(){
+		boolean keepGoing = true;
+		while (keepGoing){
+			String response = admin.menu();
+			if (response.equals("0")){
+				keepGoing = false;
+			} else if (response.equals("1")){
+				System.out.println("Full customer report");
+			} else if (response.equals("2")){
+				System.out.println("Add a user");
+			} else if (response.equals("3")){
+			System.out.println("Apply interest to savings");
+			} // end if
+		} // end while
+
+	} // end startAdmin
 
 } // end Bank
 
