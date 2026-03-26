@@ -62,7 +62,8 @@ public class Bank implements HasMenu {
 				System.out.println("Add user");
 				this.addUser();
 			} else if (response.equals("3")){
-			System.out.println("Apply interest to savings");
+				System.out.println("Apply interest to savings");
+				this.applyInterest();
 			} // end if
 		} // end while
 
@@ -88,6 +89,12 @@ public class Bank implements HasMenu {
 		String PIN = input.nextLine();
 		customers.add(new Customer(userName, PIN));
 	} // end addUser
+	
+	public void applyInterest(){
+		for (Customer customer: customers){
+			customer.savings.calcInterest();
+		} // end for
+	} // end applyInterest
 	
 } // end Bank
 
