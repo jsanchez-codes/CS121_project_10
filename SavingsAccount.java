@@ -18,7 +18,7 @@ public class SavingsAccount extends CheckingAccount {
 	
 	public void calcInterest(){
 		// note applied by admin, not customer
-		double interestAmount = this.balance + this.interestRate;
+		double interestAmount = this.balance * this.interestRate;
 		this.balance += interestAmount;
 		System.out.println("New Balance: " + this.getBalanceString());
 	} // end calcInterest
