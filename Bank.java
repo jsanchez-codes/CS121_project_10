@@ -149,9 +149,15 @@ public class Bank implements HasMenu {
 		} // end try
 	} // end loadCustomers
 	
+	public void deleteUser(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("List of current customers: " + customers);
+		for (int i = 0; i < customers.size(); i++){
+			Customer deleteCustomer = customers.remove(i);
+			System.out.println("Deleted Customer: " + deleteCustomer);
+		} // end for
+	} // end deleteUser
 	
-	//public void deleteUser(){
-		//for (int i = 0; i < customers.size(); i++){
 } // end Bank
 
 class CustomerList extends ArrayList<Customer> {};
