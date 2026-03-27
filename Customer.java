@@ -73,7 +73,7 @@ public class Customer extends User implements Serializable {
 	public void changePIN(){
 		Scanner input = new Scanner(System.in);
 		System.out.println();
-		System.out.print("Old PIN: ");
+		System.out.print("Current PIN: ");
 		String oldPin = input.nextLine();
 		if (oldPin.equals(getPIN())){
 			System.out.print("New PIN: ");

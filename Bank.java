@@ -152,7 +152,7 @@ public class Bank implements HasMenu {
 	public void deleteUser(){
 		Scanner input = new Scanner(System.in);
 		for (int i = 0; i < customers.size(); i++){;
-			System.out.printf("%d %s" , i, customers.get(i).getUserName());
+			System.out.printf("%d %s " , i, customers.get(i).getUserName());
 		} // end for
 		System.out.println();
 		System.out.print("Which user would you like to delete? Enter the number: ");
