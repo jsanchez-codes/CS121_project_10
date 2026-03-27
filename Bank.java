@@ -154,6 +154,7 @@ public class Bank implements HasMenu {
 		for (int i = 0; i < customers.size(); i++){;
 			System.out.printf("%d %s" , i, customers.get(i).getUserName());
 		} // end for
+		System.out.println();
 		System.out.println("Which user would you like to delete?");
 		int userInput = input.nextInt();
 		customers.remove(userInput);
